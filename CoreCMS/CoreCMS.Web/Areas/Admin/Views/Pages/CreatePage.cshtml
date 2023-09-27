@@ -1,0 +1,57 @@
+﻿@model PageViewModel
+
+@{
+    ViewData["Title"] = "Create Page";
+}
+
+<h1>Create Page</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="CreatePage">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Slug" class="control-label"></label>
+                <input asp-for="Slug" class="form-control" />
+                <span asp-validation-for="Slug" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Content" class="control-label"></label>
+                <textarea asp-for="Content"></textarea>
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+            <div class="mb-3 form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsPageVisibleInMenu" /> @Html.DisplayNameFor(model => model.IsPageVisibleInMenu)
+                </label>
+            </div>
+            <div class="mb-3 form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsSidebarVisible" /> @Html.DisplayNameFor(model => model.IsSidebarVisible)
+                </label>
+            </div>
+            <div class="mb-3">
+                <label asp-for="SidebarId" class="control-label"></label>
+                <select asp-for="SidebarId" asp-items="ViewBag.DropDownData" class="form-control"></select>
+                <span asp-validation-for="SidebarId" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.11.4/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace("Content");
+    </script>
+}

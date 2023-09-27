@@ -1,0 +1,28 @@
+﻿@model List<SidebarViewModel>
+
+@{
+    ViewData["Title"] = "List of Sidebars";
+}
+
+<h1>List of Sidebars</h1>
+
+<a asp-action="CreateSidebar" class="btn btn-success">Create Sidebar</a>
+
+<br />
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>Sidebar Title</th>
+        <th>Actions</th>
+    </tr>
+    @foreach(var sidebar in Model)
+    {
+        <tr>
+            <td>@sidebar.SidebarTitle</td>
+            <td>
+                <a asp-action="EditSidebar" asp-route-id="@sidebar.Id" class="btn btn-warning">Edit Sidebar</a>
+            </td>
+        </tr>
+    }
+</table>

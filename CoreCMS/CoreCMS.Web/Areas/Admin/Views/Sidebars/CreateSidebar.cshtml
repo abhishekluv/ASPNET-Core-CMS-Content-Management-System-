@@ -1,0 +1,35 @@
+﻿@model SidebarViewModel
+
+@{
+    ViewData["Title"] = "Create Sidebar";
+}
+
+<h1>Create Sidebar</h1>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="CreateSidebar">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="SidebarTitle" class="control-label"></label>
+                <input asp-for="SidebarTitle" class="form-control" />
+                <span asp-validation-for="SidebarTitle" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Content" class="control-label"></label>
+                <textarea asp-for="Content"></textarea>
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.11.4/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace("Content");
+    </script>
+}

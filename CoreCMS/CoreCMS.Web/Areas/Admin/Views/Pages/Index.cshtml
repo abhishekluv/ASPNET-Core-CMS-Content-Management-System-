@@ -1,0 +1,32 @@
+﻿@model List<PageViewModel>
+
+@{
+    ViewData["Title"] = "List of Pages";
+}
+
+<h1>List of Pages</h1>
+
+<a asp-action="CreatePage" class="btn btn-success">Create Page</a>
+
+<br />
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>Page Title</th>
+        <th>Slug</th>
+        <th>Sidebar</th>
+        <th>Actions</th>
+    </tr>
+    @foreach(var pageItem in Model)
+    {
+        <tr>
+            <td>@pageItem.Title</td>
+            <td>@pageItem.Slug</td>
+            <td>@pageItem.Sidebar.SidebarTitle</td>
+            <td>
+                <a asp-action="EditPage" asp-route-id="@pageItem.Id" class="btn btn-warning">Edit Page</a>
+            </td>
+        </tr>
+    }
+</table>
