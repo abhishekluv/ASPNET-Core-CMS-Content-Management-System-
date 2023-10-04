@@ -27,7 +27,7 @@
                             @if (User.IsInRole("admin"))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-controller="Pages" asp-action="Index" asp-area="Admin" target="_blank" title="Go to Admin Area">@User.Identity.Name (Admin)</a>
+                                    <a class="nav-link text-primary" asp-controller="Pages" asp-action="Index" asp-area="Admin" target="_blank" title="Go to Admin Area">@User.Identity.Name (Admin)</a>
                                 </li>
                             }
                             else
@@ -61,10 +61,10 @@
             <div class="row">
                 @if(ViewBag.Sidebar == true)
                 {
-                    <div class="col-md-8">
+                    <div class="col-md-9">
                         @RenderBody()
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <vc:sidebar></vc:sidebar>
                     </div>
                 }
