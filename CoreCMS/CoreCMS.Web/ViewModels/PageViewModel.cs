@@ -20,6 +20,8 @@ namespace CoreCMS.Web.ViewModels
         public bool IsSidebarVisible { get; set; }
 
         //SidebarId Fk
+
+        [Display(Name = "Sidebar")]
         public int SidebarId { get; set; }
 
         public Sidebar? Sidebar { get; set; }
