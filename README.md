@@ -18,7 +18,7 @@ This is a simple Content Management System created using ASP.NET Core and Entity
 
 ## EF Core Seeding
 
-The `CoreCMSContext` class will seed test/dummy data for sidebar, pages and user and roles using the overriden `OnModelCreating()` method.
+The `CoreCMSContext` class will seed test/dummy data for sidebar, pages, user and roles using the overridden `OnModelCreating()` method.
 
 ![](https://i.imgur.com/EyjYLCg.jpeg)
 
